@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">t share</string>
+    <string name="send_button">Send Button</string>
+    <string name="receive_button">Receive Button</string>
+    <string name="browse_button">Browse Button</string>
+    <string name="browse_text">Browse text</string>
+    <string name="share_text">share text</string>
+    <string name="share_button">Share button</string>
+    <string name="about">About</string>
+    <string name="help_feedback"><![CDATA[Help & Feedback]]></string>
+    <string name="private_policy">Private Policy</string>
+    <string name="t_share_logo">t share logo</string>
+    <string name="user_name">Rising</string>
+    <string name="change">Change</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

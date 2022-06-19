@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/t_share_logo"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:contentDescription="@string/t_share_logo"
+        android:foreground="@drawable/t_share_logo"
+        />
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/t_share_logo"
+        android:background="#000000" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/roundImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/Dark_Blue"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="105dp"
+        android:background="@null"
+        android:text="@string/user_name"
+        android:textAlignment="center"
+        android:textColor="@color/Crimson_red"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/change_btn"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="165dp"
+        android:paddingBottom="10dp"
+        android:text="@string/change"
+        android:textAlignment="center"
+        android:textColor="@color/Cobalt_blue" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/change_btn"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black"
+        />
+
+
+
+</RelativeLayout>
