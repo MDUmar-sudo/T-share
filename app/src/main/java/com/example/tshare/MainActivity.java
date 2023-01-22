@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -47,76 +48,78 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
 
         navigationView = findViewById(R.id.navigation_view);
-//        navigationView.setItemIconTintList(null);
+        navigationView.setItemIconTintList(null);
 
 
 
-//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//                item.setChecked(true);
-//                switch(id){
-//                    case R.id.nav_about:
-//                        replaceFragments(new AboutFragment());
-////                        drawerLayout.closeDrawer(GravityCompat.START);
-//                        break;
-//                    case R.id.nav_help:
-//                        replaceFragments(new Help_feedback_Fragment());
-////                        drawerLayout.closeDrawer(GravityCompat.START);
-//                        break;
-//                    case R.id.nav_policy:
-//                        replaceFragments(new PrivacyPolicyFragment());
-////                        drawerLayout.closeDrawer(GravityCompat.START);
-//                        break;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                item.setChecked(true);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                switch(id){
+                    case R.id.nav_about:
+                        startActivity(new Intent(MainActivity.this,About.class));
+                        overridePendingTransition(0,0);
+                        break;
+                    case R.id.nav_help:
+                        startActivity(new Intent(MainActivity.this,Help_Feedback.class));
+                        overridePendingTransition(0,0);
+                        break;
+                    case R.id.nav_policy:
+                        startActivity(new Intent(MainActivity.this,Privacy_Policy.class));
+                        overridePendingTransition(0,0);
+                        break;
+
+                }
+
+                return true;
+            }
+        });
+
+    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        //getMenuInflater().inflate(R.menu.nav_options,menu);
+//        return true;
+//    }
 //
-//                }
-//                drawerLayout.closeDrawer(GravityCompat.START);
-//                return true;
-//            }
-//        });
-
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        //getMenuInflater().inflate(R.menu.nav_options,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected( MenuItem item) {
-        if(toggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        int id = item.getItemId();
-//        item.setChecked(true);
-
-        if(id== R.id.nav_about) {
-            Intent intent = new Intent(MainActivity.this, About.class);
-            startActivity(intent);
-//                drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        }
-
-        else
-        if(id==R.id.nav_help) {
-            Intent intent_1 = new Intent(MainActivity.this, Help_Feedback.class);
-            startActivity(intent_1);
-//                drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        }
-
-        else
-        if(id== R.id.nav_policy) {
-            Intent intent_2 = new Intent(MainActivity.this, Privacy_Policy.class);
-            startActivity(intent_2);
-//                drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else return true;
-
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected( MenuItem item) {
+//        if(toggle.onOptionsItemSelected(item)){
+//            return true;
+//        }
+//        int id = item.getItemId();
+////        item.setChecked(true);
+//
+//        if(id== R.id.nav_about) {
+//            Intent intent = new Intent(MainActivity.this, About.class);
+//            startActivity(intent);
+////                drawerLayout.closeDrawer(GravityCompat.START);
+//            return true;
+//        }
+//
+//        else
+//        if(id==R.id.nav_help) {
+//            Intent intent_1 = new Intent(MainActivity.this, Help_Feedback.class);
+//            startActivity(intent_1);
+////                drawerLayout.closeDrawer(GravityCompat.START);
+//            return true;
+//        }
+//
+//        else
+//        if(id== R.id.nav_policy) {
+//            Intent intent_2 = new Intent(MainActivity.this, Privacy_Policy.class);
+//            startActivity(intent_2);
+////                drawerLayout.closeDrawer(GravityCompat.START);
+//        }
+//        else return true;
+//
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 // Method to replace different fragment when anyone of the menu item's are clicked
 //    private void replaceFragments(Fragment fragment){
 //        FragmentManager fragmentManager = getSupportFragmentManager();
